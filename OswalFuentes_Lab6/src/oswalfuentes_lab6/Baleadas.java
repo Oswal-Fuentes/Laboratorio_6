@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Baleadas extends Articulos_en_Venta {
 
-    ArrayList<String> ingredientes = new ArrayList();
+    private ArrayList<String> ingredientes = new ArrayList();
 
     public Baleadas() {
     }
