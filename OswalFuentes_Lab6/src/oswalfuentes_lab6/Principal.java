@@ -11,6 +11,7 @@ import java.awt.Toolkit;
 import java.util.ArrayList;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -24,7 +25,7 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
     }
 
     /**
@@ -101,19 +102,20 @@ public class Principal extends javax.swing.JFrame {
         jd_familiares = new javax.swing.JDialog();
         jd_baleadas = new javax.swing.JDialog();
         jLabel17 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
+        tf_precio_baleada = new javax.swing.JTextField();
+        tf_ingrediente_baleada = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jButton13 = new javax.swing.JButton();
+        bt_agregaringrediente_baleada = new javax.swing.JToggleButton();
+        bt_agregar_baleada = new javax.swing.JButton();
         jd_gatos = new javax.swing.JDialog();
-        jTextField20 = new javax.swing.JTextField();
+        tf_precio_gatos = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
-        jTextField21 = new javax.swing.JTextField();
-        jTextField22 = new javax.swing.JTextField();
-        jButton14 = new javax.swing.JButton();
+        tf_peso_gatos = new javax.swing.JTextField();
+        tf_altura_gatos = new javax.swing.JTextField();
+        bt_agregar_gatos = new javax.swing.JButton();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -130,7 +132,13 @@ public class Principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jt_listar = new javax.swing.JTable();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jRadioButton6 = new javax.swing.JRadioButton();
         jPanel6 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -536,9 +544,14 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel18.setText("Ingrediente");
 
-        jToggleButton1.setText("Agregar");
+        bt_agregaringrediente_baleada.setText("Agregar");
+        bt_agregaringrediente_baleada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_agregaringrediente_baleadaActionPerformed(evt);
+            }
+        });
 
-        jButton13.setText("Agregar baleada");
+        bt_agregar_baleada.setText("Agregar baleada");
 
         javax.swing.GroupLayout jd_baleadasLayout = new javax.swing.GroupLayout(jd_baleadas.getContentPane());
         jd_baleadas.getContentPane().setLayout(jd_baleadasLayout);
@@ -551,14 +564,14 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel18))
                 .addGap(18, 18, 18)
                 .addGroup(jd_baleadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField13)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_ingrediente_baleada)
+                    .addComponent(tf_precio_baleada, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bt_agregaringrediente_baleada, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(70, 70, 70))
             .addGroup(jd_baleadasLayout.createSequentialGroup()
                 .addGap(106, 106, 106)
-                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bt_agregar_baleada, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jd_baleadasLayout.setVerticalGroup(
@@ -567,14 +580,14 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(103, 103, 103)
                 .addGroup(jd_baleadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_precio_baleada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(jd_baleadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_ingrediente_baleada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18)
-                    .addComponent(jToggleButton1))
+                    .addComponent(bt_agregaringrediente_baleada))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
-                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bt_agregar_baleada, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(81, 81, 81))
         );
 
@@ -586,7 +599,12 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel33.setText("Altura");
 
-        jButton14.setText("Agregar gato");
+        bt_agregar_gatos.setText("Agregar gato");
+        bt_agregar_gatos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_agregar_gatosMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_gatosLayout = new javax.swing.GroupLayout(jd_gatos.getContentPane());
         jd_gatos.getContentPane().setLayout(jd_gatosLayout);
@@ -595,7 +613,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jd_gatosLayout.createSequentialGroup()
                 .addGap(117, 117, 117)
                 .addGroup(jd_gatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt_agregar_gatos, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jd_gatosLayout.createSequentialGroup()
                         .addGroup(jd_gatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel33)
@@ -603,9 +621,9 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(jLabel20))
                         .addGap(18, 18, 18)
                         .addGroup(jd_gatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField20, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(jTextField21)
-                            .addComponent(jTextField22))))
+                            .addComponent(tf_precio_gatos, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(tf_peso_gatos)
+                            .addComponent(tf_altura_gatos))))
                 .addContainerGap(137, Short.MAX_VALUE))
         );
         jd_gatosLayout.setVerticalGroup(
@@ -614,17 +632,17 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(87, 87, 87)
                 .addGroup(jd_gatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
-                    .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_precio_gatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(jd_gatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
-                    .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_peso_gatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
                 .addGroup(jd_gatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel33)
-                    .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_altura_gatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bt_agregar_gatos, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58))
         );
 
@@ -725,6 +743,11 @@ public class Principal extends javax.swing.JFrame {
 
         jButton6.setText("Gatos");
         jButton6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Seleccione el tipo de articulo que desea agregar");
@@ -770,7 +793,7 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Agregar", jPanel4);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jt_listar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -780,8 +803,54 @@ public class Principal extends javax.swing.JFrame {
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
-        ));
-        jScrollPane4.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(jt_listar);
+
+        buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setText("Cliente");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setText("Empleado");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(jRadioButton3);
+        jRadioButton3.setText("Jefe");
+        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton3ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(jRadioButton4);
+        jRadioButton4.setText("Familiares");
+
+        buttonGroup1.add(jRadioButton5);
+        jRadioButton5.setText("Baleadas");
+
+        buttonGroup1.add(jRadioButton6);
+        jRadioButton6.setText("Gatos");
+        jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -789,13 +858,35 @@ public class Principal extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 755, Short.MAX_VALUE)
+                .addComponent(jScrollPane4)
                 .addContainerGap())
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(143, 143, 143)
+                .addComponent(jRadioButton1)
+                .addGap(18, 18, 18)
+                .addComponent(jRadioButton2)
+                .addGap(18, 18, 18)
+                .addComponent(jRadioButton3)
+                .addGap(18, 18, 18)
+                .addComponent(jRadioButton4)
+                .addGap(18, 18, 18)
+                .addComponent(jRadioButton5)
+                .addGap(18, 18, 18)
+                .addComponent(jRadioButton6)
+                .addContainerGap(170, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(56, Short.MAX_VALUE)
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jRadioButton2)
+                    .addComponent(jRadioButton3)
+                    .addComponent(jRadioButton4)
+                    .addComponent(jRadioButton5)
+                    .addComponent(jRadioButton6))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -964,6 +1055,115 @@ public class Principal extends javax.swing.JFrame {
         jd_empleados.setVisible(true);
     }//GEN-LAST:event_jButton4MouseClicked
 
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        jt_listar.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Nombre", "Edad", "Dinero", "Ticket"
+                }
+        ));
+        DefaultTableModel modelo = (DefaultTableModel) jt_listar.getModel();
+        for (int i = 0; i < personas.size(); i++) {
+            if (personas.get(i) instanceof Clientes) {
+                Object[] row = {
+                    personas.get(i).getNombre(),
+                    personas.get(i).getEdad(),
+                    ((Clientes) personas.get(i)).getDinero(),
+                    ((Clientes) personas.get(i)).getTicket(),};
+                modelo.addRow(row);
+            }
+            jt_listar.setModel(modelo);
+        }
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        jt_listar.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Nombre", "Seccion de Trabajo", "Hora de entrada", "Hora de salida", "Sueldo", "Estado"
+                }
+        ));
+        DefaultTableModel modelo = (DefaultTableModel) jt_listar.getModel();
+        for (int i = 0; i < personas.size(); i++) {
+            if (personas.get(i) instanceof Empleado) {
+                Object[] row = {
+                    personas.get(i).getNombre(),
+                    ((Empleado) personas.get(i)).getSeccion_trabajo(),
+                    ((Empleado) personas.get(i)).getHora_entrada(),
+                    ((Empleado) personas.get(i)).getHora_salida(),
+                    ((Empleado) personas.get(i)).getSueldo(),
+                    ((Empleado) personas.get(i)).getEstado(),};
+                modelo.addRow(row);
+            }
+            jt_listar.setModel(modelo);
+        }
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+        jt_listar.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Nombre", "Seccion de Trabajo", "Clientes atendidos", "Gananacia"
+                }
+        ));
+        DefaultTableModel modelo = (DefaultTableModel) jt_listar.getModel();
+        for (int i = 0; i < personas.size(); i++) {
+            if (personas.get(i) instanceof Jefes) {
+                Object[] row = {
+                    personas.get(i).getNombre(),
+                    ((Jefes) personas.get(i)).getSeccion_trabajo(),
+                    ((Jefes) personas.get(i)).getClientes_atendidos(),
+                    ((Jefes) personas.get(i)).getGanancia(),};
+                modelo.addRow(row);
+            }
+            jt_listar.setModel(modelo);
+        }
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
+
+    private void bt_agregaringrediente_baleadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_agregaringrediente_baleadaActionPerformed
+
+    }//GEN-LAST:event_bt_agregaringrediente_baleadaActionPerformed
+
+    private void bt_agregar_gatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_agregar_gatosMouseClicked
+        int peso, altura, precio;
+        precio = Integer.parseInt(tf_precio_gatos.getText());
+        peso = Integer.parseInt(tf_peso_gatos.getText());
+        altura = Integer.parseInt(tf_altura_gatos.getText());
+        articulos.add(new Gatos(peso, altura, precio));
+        JOptionPane.showMessageDialog(null, "Se ha agregado al gato exitosamente");
+        jd_gatos.dispose();//Cierra la ventana
+        tf_precio_gatos.setText("");
+        tf_peso_gatos.setText("");
+        tf_altura_gatos.setText("");
+    }//GEN-LAST:event_bt_agregar_gatosMouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        jd_gatos.setModal(true);//Bloquear otras ventanas
+        jd_gatos.pack();//Acoplar el tamaño a la ventana a los elementos que incluye
+        jd_gatos.setLocationRelativeTo(this);//Ubicar la ventana en una posicion
+        jd_gatos.setVisible(true);
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
+        jt_listar.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Altura", "Peso", "Precio"
+                }
+        ));
+        DefaultTableModel modelo = (DefaultTableModel) jt_listar.getModel();
+        for (int i = 0; i < articulos.size(); i++) {
+            if (articulos.get(i) instanceof Gatos) {
+                Object[] row = {
+                    ((Gatos) articulos.get(i)).getAltura(),
+                    ((Gatos) articulos.get(i)).getPeso(),
+                    articulos.get(i).getPrecio(),};
+                modelo.addRow(row);
+            }
+            jt_listar.setModel(modelo);
+        }
+    }//GEN-LAST:event_jRadioButton6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1008,18 +1208,20 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_agregar_baleada;
+    private javax.swing.JButton bt_agregar_gatos;
+    private javax.swing.JToggleButton bt_agregaringrediente_baleada;
     private javax.swing.JButton bt_color;
     private javax.swing.JButton bt_color_empleado;
     private javax.swing.JButton bt_color_jefe;
     private javax.swing.JButton bt_guardar_cliente;
     private javax.swing.JButton bt_guardar_empleado;
     private javax.swing.JButton bt_guardar_jefe;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cb_estado_empleado;
     private javax.swing.JComboBox<String> cb_seccion_empleado;
     private javax.swing.JComboBox<String> cb_seccion_jefe;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1070,19 +1272,18 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTree jTree1;
     private javax.swing.JTree jTree2;
     private javax.swing.JTree jTree3;
@@ -1092,8 +1293,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog jd_familiares;
     private javax.swing.JDialog jd_gatos;
     private javax.swing.JDialog jd_jefes;
+    private javax.swing.JTable jt_listar;
     private javax.swing.JSpinner sp_entrada_empleado;
     private javax.swing.JSpinner sp_salida_empleado;
+    private javax.swing.JTextField tf_altura_gatos;
     private javax.swing.JTextField tf_dinero_cliente;
     private javax.swing.JTextField tf_edad_cliente;
     private javax.swing.JTextField tf_edad_empleado;
@@ -1101,6 +1304,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_id_cliente;
     private javax.swing.JTextField tf_id_empleado;
     private javax.swing.JTextField tf_id_jefe;
+    private javax.swing.JTextField tf_ingrediente_baleada;
     private javax.swing.JTextField tf_nacimiento_cliente;
     private javax.swing.JTextField tf_nacimiento_empleado;
     private javax.swing.JTextField tf_nacimiento_jefe;
@@ -1110,9 +1314,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_nombre_cliente;
     private javax.swing.JTextField tf_nombre_empleado;
     private javax.swing.JTextField tf_nombre_jefe;
+    private javax.swing.JTextField tf_peso_gatos;
+    private javax.swing.JTextField tf_precio_baleada;
+    private javax.swing.JTextField tf_precio_gatos;
     private javax.swing.JTextField tf_sueldo_empleado;
     // End of variables declaration//GEN-END:variables
     int t = 1;
     ArrayList<Persona> personas = new ArrayList();
+    ArrayList<Articulos_en_Venta> articulos = new ArrayList();
 
 }
