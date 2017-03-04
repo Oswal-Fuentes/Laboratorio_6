@@ -18,6 +18,10 @@ public class Baleadas extends Articulos_en_Venta {
     public Baleadas() {
     }
 
+    public Baleadas(int precio) {
+        super(precio);
+    }
+    
     public ArrayList<String> getIngredientes() {
         return ingredientes;
     }

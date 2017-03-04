@@ -545,13 +545,18 @@ public class Principal extends javax.swing.JFrame {
         jLabel18.setText("Ingrediente");
 
         bt_agregaringrediente_baleada.setText("Agregar");
-        bt_agregaringrediente_baleada.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_agregaringrediente_baleadaActionPerformed(evt);
+        bt_agregaringrediente_baleada.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_agregaringrediente_baleadaMouseClicked(evt);
             }
         });
 
         bt_agregar_baleada.setText("Agregar baleada");
+        bt_agregar_baleada.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_agregar_baleadaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_baleadasLayout = new javax.swing.GroupLayout(jd_baleadas.getContentPane());
         jd_baleadas.getContentPane().setLayout(jd_baleadasLayout);
@@ -740,6 +745,11 @@ public class Principal extends javax.swing.JFrame {
 
         jButton5.setText("Baleadas");
         jButton5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
 
         jButton6.setText("Gatos");
         jButton6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -843,6 +853,11 @@ public class Principal extends javax.swing.JFrame {
 
         buttonGroup1.add(jRadioButton5);
         jRadioButton5.setText("Baleadas");
+        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton5ActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(jRadioButton6);
         jRadioButton6.setText("Gatos");
@@ -1120,10 +1135,6 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
-    private void bt_agregaringrediente_baleadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_agregaringrediente_baleadaActionPerformed
-
-    }//GEN-LAST:event_bt_agregaringrediente_baleadaActionPerformed
-
     private void bt_agregar_gatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_agregar_gatosMouseClicked
         int peso, altura, precio;
         precio = Integer.parseInt(tf_precio_gatos.getText());
@@ -1163,6 +1174,47 @@ public class Principal extends javax.swing.JFrame {
             jt_listar.setModel(modelo);
         }
     }//GEN-LAST:event_jRadioButton6ActionPerformed
+
+    private void bt_agregaringrediente_baleadaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_agregaringrediente_baleadaMouseClicked
+        ingredientes.add(tf_ingrediente_baleada.getText());
+    }//GEN-LAST:event_bt_agregaringrediente_baleadaMouseClicked
+
+    private void bt_agregar_baleadaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_agregar_baleadaMouseClicked
+        int precio = Integer.parseInt(tf_precio_baleada.getText());
+        int pos;
+        articulos.add(new Baleadas(precio));
+        pos = articulos.size() - 1;
+        ((Baleadas) articulos.get(pos)).setIngredientes(ingredientes);
+        ingredientes.clear();
+        JOptionPane.showMessageDialog(null, "Se agrego la baleada exitosamente");
+        jd_baleadas.dispose();//Cierra la ventana
+    }//GEN-LAST:event_bt_agregar_baleadaMouseClicked
+
+    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
+        jt_listar.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Precio", "Ingredientes"
+                }
+        ));
+        DefaultTableModel modelo = (DefaultTableModel) jt_listar.getModel();
+        for (int i = 0; i < articulos.size(); i++) {
+            if (articulos.get(i) instanceof Baleadas) {
+                Object[] row = {
+                    articulos.get(i).getPrecio(),
+                    ((Baleadas) articulos.get(i)).getIngredientes(),};
+                modelo.addRow(row);
+            }
+            jt_listar.setModel(modelo);
+        }
+    }//GEN-LAST:event_jRadioButton5ActionPerformed
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        jd_baleadas.setModal(true);//Bloquear otras ventanas
+        jd_baleadas.pack();//Acoplar el tamaño a la ventana a los elementos que incluye
+        jd_baleadas.setLocationRelativeTo(this);//Ubicar la ventana en una posicion
+        jd_baleadas.setVisible(true);
+    }//GEN-LAST:event_jButton5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1322,5 +1374,5 @@ public class Principal extends javax.swing.JFrame {
     int t = 1;
     ArrayList<Persona> personas = new ArrayList();
     ArrayList<Articulos_en_Venta> articulos = new ArrayList();
-
+    ArrayList<String> ingredientes = new ArrayList();
 }
