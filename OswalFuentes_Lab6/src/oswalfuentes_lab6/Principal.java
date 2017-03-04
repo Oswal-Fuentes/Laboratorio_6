@@ -6,8 +6,11 @@
 package oswalfuentes_lab6;
 
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import javax.swing.JColorChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,6 +23,8 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
     }
 
     /**
@@ -124,6 +129,8 @@ public class Principal extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -243,7 +250,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jd_jefes.setTitle("Agregar empleado");
+        jd_jefes.setTitle("Agregar jefe");
 
         jLabel11.setText("Nombre");
 
@@ -358,7 +365,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jd_empleados.setTitle("Agregar jefe");
+        jd_empleados.setTitle("Agregar empleado");
 
         jLabel22.setText("Nombre");
 
@@ -636,9 +643,19 @@ public class Principal extends javax.swing.JFrame {
 
         jButton3.setText("Jefe");
         jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
 
         jButton4.setText("Empleado");
         jButton4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Seleccione el tipo de persona que desea agregar");
@@ -664,7 +681,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(89, Short.MAX_VALUE)
+                .addContainerGap(103, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -694,7 +711,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(155, Short.MAX_VALUE)
+                .addContainerGap(169, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(151, 151, 151))
         );
@@ -753,15 +770,34 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Agregar", jPanel4);
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable1);
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 775, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 755, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 435, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(56, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jTabbedPane2.addTab("Listar", jPanel5);
@@ -774,7 +810,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 435, Short.MAX_VALUE)
+            .addGap(0, 449, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Modificar/Eliminar", jPanel6);
@@ -829,6 +865,14 @@ public class Principal extends javax.swing.JFrame {
         nombre = tf_nombre_cliente.getText();
         color = bt_color.getForeground();
         personas.add(new Clientes(ticket, dinero, edad, id, nacionalidad, lugar_nacimiento, nombre, color));
+        JOptionPane.showMessageDialog(null, "Se agregó al cliente exitosamente");
+        jd_cliente.dispose();//Cierra la ventana
+        tf_edad_cliente.setText("");
+        tf_id_cliente.setText("");
+        tf_dinero_cliente.setText("");
+        tf_nacionalidad_cliente.setText("");
+        tf_nacimiento_cliente.setText("");
+        tf_nombre_cliente.setText("");
     }//GEN-LAST:event_bt_guardar_clienteMouseClicked
 
     private void bt_colorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_colorMouseClicked
@@ -855,6 +899,13 @@ public class Principal extends javax.swing.JFrame {
         nombre = tf_nombre_jefe.getText();
         seccion_trabajo = (String) cb_seccion_jefe.getSelectedItem();
         personas.add(new Jefes(seccion_trabajo, edad, id, nacionalidad, lugar_nacimiento, nombre, color));
+        JOptionPane.showMessageDialog(null, "Se agregó al jefe exitosamente");
+        jd_jefes.dispose();//Cierra la ventana
+        tf_edad_jefe.setText("");
+        tf_id_jefe.setText("");
+        tf_nacionalidad_jefe.setText("");
+        tf_nacimiento_jefe.setText("");
+        tf_nombre_jefe.setText("");
     }//GEN-LAST:event_bt_guardar_jefeMouseClicked
 
     private void bt_guardar_empleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_guardar_empleadoMouseClicked
@@ -874,6 +925,16 @@ public class Principal extends javax.swing.JFrame {
         color = bt_color_empleado.getForeground();
         personas.add(new Empleado(seccion_trabajo, estado, hora_entrada, hora_salida,
                 sueldo, edad, id, nacionalidad, lugar_nacimiento, nombre, color));
+        JOptionPane.showMessageDialog(null, "Se agregó al empleado exitosamente");
+        jd_empleados.dispose();//Cierra la ventana
+        tf_edad_empleado.setText("");
+        tf_id_empleado.setText("");
+        sp_entrada_empleado.setValue(0);
+        sp_salida_empleado.setValue(0);
+        tf_sueldo_empleado.setText("");
+        tf_nacionalidad_empleado.setText("");
+        tf_nacimiento_empleado.setText("");
+        tf_nombre_empleado.setText("");
     }//GEN-LAST:event_bt_guardar_empleadoMouseClicked
 
     private void bt_color_empleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_color_empleadoMouseClicked
@@ -883,9 +944,25 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_color_empleadoMouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        jd_cliente.setEnabled(true);
-        
+        jd_cliente.setModal(true);//Bloquear otras ventanas
+        jd_cliente.pack();//Acoplar el tamaño a la ventana a los elementos que incluye
+        jd_cliente.setLocationRelativeTo(this);//Ubicar la ventana en una posicion
+        jd_cliente.setVisible(true);
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        jd_jefes.setModal(true);//Bloquear otras ventanas
+        jd_jefes.pack();//Acoplar el tamaño a la ventana a los elementos que incluye
+        jd_jefes.setLocationRelativeTo(this);//Ubicar la ventana en una posicion
+        jd_jefes.setVisible(true);
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        jd_empleados.setModal(true);//Bloquear otras ventanas
+        jd_empleados.pack();//Acoplar el tamaño a la ventana a los elementos que incluye
+        jd_empleados.setLocationRelativeTo(this);//Ubicar la ventana en una posicion
+        jd_empleados.setVisible(true);
+    }//GEN-LAST:event_jButton4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -996,8 +1073,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField21;
