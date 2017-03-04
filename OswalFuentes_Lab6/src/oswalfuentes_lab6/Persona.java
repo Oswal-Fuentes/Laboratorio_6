@@ -32,6 +32,17 @@ public class Persona {
         this.familiar = familiar;
     }
 
+    public Persona(int edad, int id, String nacionalidad, String lugar_nacimiento, String nombre, Color color) {
+        this.edad = edad;
+        this.id = id;
+        this.nacionalidad = nacionalidad;
+        this.lugar_nacimiento = lugar_nacimiento;
+        this.nombre = nombre;
+        this.color = color;
+    }
+    
+    
+
     public int getEdad() {
         return edad;
     }

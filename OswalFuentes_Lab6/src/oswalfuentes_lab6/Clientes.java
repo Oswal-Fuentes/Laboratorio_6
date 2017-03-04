@@ -21,11 +21,19 @@ public class Clientes extends Persona {
     public Clientes() {
     }
 
-    public Clientes(int ticket, float dinero) {
+    public Clientes(int ticket, float dinero, int edad, int id, String nacionalidad, String lugar_nacimiento, String nombre, Color color, Familiares familiar) {
+        super(edad, id, nacionalidad, lugar_nacimiento, nombre, color, familiar);
         this.ticket = ticket;
         this.dinero = dinero;
     }
 
+    public Clientes(int ticket, float dinero, int edad, int id, String nacionalidad, String lugar_nacimiento, String nombre, Color color) {
+        super(edad, id, nacionalidad, lugar_nacimiento, nombre, color);
+        this.ticket = ticket;
+        this.dinero = dinero;
+    }
+    
+    
     public int getTicket() {
         return ticket;
     }

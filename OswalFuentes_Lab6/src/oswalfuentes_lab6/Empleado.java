@@ -20,7 +20,8 @@ public class Empleado extends Persona{
     public Empleado() {
     }
 
-    public Empleado(String seccion_trabajo, String estado, int hora_entrada, int hora_salida, int sueldo) {
+    public Empleado(String seccion_trabajo, String estado, int hora_entrada, int hora_salida, int sueldo, int edad, int id, String nacionalidad, String lugar_nacimiento, String nombre, Color color) {
+        super(edad, id, nacionalidad, lugar_nacimiento, nombre, color);
         this.seccion_trabajo = seccion_trabajo;
         this.estado = estado;
         this.hora_entrada = hora_entrada;
@@ -28,6 +29,8 @@ public class Empleado extends Persona{
         this.sueldo = sueldo;
     }
 
+    
+    
     public String getSeccion_trabajo() {
         return seccion_trabajo;
     }

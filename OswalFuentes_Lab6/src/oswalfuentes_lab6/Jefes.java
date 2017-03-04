@@ -21,10 +21,9 @@ public class Jefes extends Persona {
     public Jefes() {
     }
 
-    public Jefes(String seccion_trabajo, int clientes_atendidos, int ganancia) {
+    public Jefes(String seccion_trabajo, int edad, int id, String nacionalidad, String lugar_nacimiento, String nombre, Color color) {
+        super(edad, id, nacionalidad, lugar_nacimiento, nombre, color);
         this.seccion_trabajo = seccion_trabajo;
-        this.clientes_atendidos = clientes_atendidos;
-        this.ganancia = ganancia;
     }
 
     public String getSeccion_trabajo() {
@@ -112,6 +111,4 @@ public class Jefes extends Persona {
         return "Jefes{" + "seccion_trabajo=" + seccion_trabajo + ", empleados=" + empleados + ", clientes_atendidos=" + clientes_atendidos + ", ganancia=" + ganancia + '}';
     }
 
-    
-    
 }
