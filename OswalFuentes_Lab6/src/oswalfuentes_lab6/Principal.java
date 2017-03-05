@@ -56,24 +56,6 @@ public class Principal extends javax.swing.JFrame {
         bt_guardar_cliente = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTree2 = new javax.swing.JTree();
-        jd_jefes = new javax.swing.JDialog();
-        jLabel11 = new javax.swing.JLabel();
-        tf_nombre_jefe = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        tf_edad_jefe = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        tf_id_jefe = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        tf_nacionalidad_jefe = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        tf_nacimiento_jefe = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        bt_color_jefe = new javax.swing.JButton();
-        bt_guardar_jefe = new javax.swing.JButton();
-        jLabel19 = new javax.swing.JLabel();
-        cb_seccion_jefe = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
         jd_empleados = new javax.swing.JDialog();
         jLabel22 = new javax.swing.JLabel();
         tf_nombre_empleado = new javax.swing.JTextField();
@@ -100,7 +82,24 @@ public class Principal extends javax.swing.JFrame {
         cb_estado_empleado = new javax.swing.JComboBox<>();
         jLabel32 = new javax.swing.JLabel();
         tf_sueldo_empleado = new javax.swing.JTextField();
-        jd_familiares = new javax.swing.JDialog();
+        jd_jefes = new javax.swing.JDialog();
+        jLabel11 = new javax.swing.JLabel();
+        tf_nombre_jefe = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        tf_edad_jefe = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        tf_id_jefe = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        tf_nacionalidad_jefe = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        tf_nacimiento_jefe = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        bt_color_jefe = new javax.swing.JButton();
+        bt_guardar_jefe = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        cb_seccion_jefe = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTree1 = new javax.swing.JTree();
         jd_baleadas = new javax.swing.JDialog();
         jLabel17 = new javax.swing.JLabel();
         tf_precio_baleada = new javax.swing.JTextField();
@@ -116,6 +115,7 @@ public class Principal extends javax.swing.JFrame {
         tf_peso_gatos = new javax.swing.JTextField();
         tf_altura_gatos = new javax.swing.JTextField();
         bt_agregar_gatos = new javax.swing.JButton();
+        jd_familiares = new javax.swing.JDialog();
         buttonGroup1 = new javax.swing.ButtonGroup();
         jd_eliminar = new javax.swing.JDialog();
         cb_eliminar = new javax.swing.JComboBox<>();
@@ -123,6 +123,12 @@ public class Principal extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         tf_pos_eliminar = new javax.swing.JTextField();
         bt_eliminar = new javax.swing.JButton();
+        jd_modificar = new javax.swing.JDialog();
+        cb_modificar = new javax.swing.JComboBox<>();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        tf_pos_modifcar = new javax.swing.JTextField();
+        bt_modifcar = new javax.swing.JButton();
         jd_cliente_modificar = new javax.swing.JDialog();
         jLabel35 = new javax.swing.JLabel();
         tf_nombre_mcliente = new javax.swing.JTextField();
@@ -139,12 +145,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel41 = new javax.swing.JLabel();
         tf_dinero_mcliente = new javax.swing.JTextField();
         bt_guardar_mcliente = new javax.swing.JButton();
-        jd_modificar = new javax.swing.JDialog();
-        cb_modificar = new javax.swing.JComboBox<>();
-        jLabel42 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
-        tf_pos_modifcar = new javax.swing.JTextField();
-        bt_modifcar = new javax.swing.JButton();
         jd_empleados_modificar = new javax.swing.JDialog();
         jLabel44 = new javax.swing.JLabel();
         tf_nombre_mempleado = new javax.swing.JTextField();
@@ -169,6 +169,22 @@ public class Principal extends javax.swing.JFrame {
         cb_estado_mempleado = new javax.swing.JComboBox<>();
         jLabel54 = new javax.swing.JLabel();
         tf_sueldo_mempleado = new javax.swing.JTextField();
+        jd_jefes_modificar = new javax.swing.JDialog();
+        jLabel55 = new javax.swing.JLabel();
+        tf_nombre_mjefe = new javax.swing.JTextField();
+        jLabel56 = new javax.swing.JLabel();
+        tf_edad_mjefe = new javax.swing.JTextField();
+        jLabel57 = new javax.swing.JLabel();
+        tf_id_mjefe = new javax.swing.JTextField();
+        jLabel58 = new javax.swing.JLabel();
+        tf_nacionalidad_mjefe = new javax.swing.JTextField();
+        jLabel59 = new javax.swing.JLabel();
+        tf_nacimiento_mjefe = new javax.swing.JTextField();
+        jLabel60 = new javax.swing.JLabel();
+        bt_color_mjefe = new javax.swing.JButton();
+        bt_guardar_mjefe = new javax.swing.JButton();
+        jLabel61 = new javax.swing.JLabel();
+        cb_seccion_mjefe = new javax.swing.JComboBox<>();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -310,121 +326,6 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jd_clienteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane2)
-                .addContainerGap())
-        );
-
-        jd_jefes.setTitle("Agregar jefe");
-
-        jLabel11.setText("Nombre");
-
-        jLabel12.setText("Edad");
-
-        jLabel13.setText("ID");
-
-        jLabel14.setText("Nacionalidad");
-
-        jLabel15.setText("Lugar de nacimiento");
-
-        jLabel16.setText("Color");
-
-        bt_color_jefe.setText("-");
-        bt_color_jefe.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_color_jefeMouseClicked(evt);
-            }
-        });
-
-        bt_guardar_jefe.setText("Guardar jefe");
-        bt_guardar_jefe.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_guardar_jefeMouseClicked(evt);
-            }
-        });
-
-        jLabel19.setText("Seccion de trabajo");
-
-        cb_seccion_jefe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Venta de gatos", "Venta de baleadas" }));
-
-        jScrollPane1.setViewportView(jTree1);
-
-        javax.swing.GroupLayout jd_jefesLayout = new javax.swing.GroupLayout(jd_jefes.getContentPane());
-        jd_jefes.getContentPane().setLayout(jd_jefesLayout);
-        jd_jefesLayout.setHorizontalGroup(
-            jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_jefesLayout.createSequentialGroup()
-                .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_jefesLayout.createSequentialGroup()
-                        .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_jefesLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel13)
-                                    .addComponent(jLabel14)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel11))
-                                .addGap(26, 26, 26))
-                            .addGroup(jd_jefesLayout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel16)
-                                    .addComponent(jLabel15)
-                                    .addComponent(jLabel19))
-                                .addGap(18, 18, 18)))
-                        .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(tf_nacionalidad_jefe, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(tf_nombre_jefe, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(tf_id_jefe, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(tf_edad_jefe, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(tf_nacimiento_jefe, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-                                .addComponent(bt_color_jefe, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(cb_seccion_jefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jd_jefesLayout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(bt_guardar_jefe, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
-        );
-        jd_jefesLayout.setVerticalGroup(
-            jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_jefesLayout.createSequentialGroup()
-                .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jd_jefesLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(tf_nombre_jefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(tf_edad_jefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel13)
-                            .addComponent(tf_id_jefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14)
-                            .addComponent(tf_nacionalidad_jefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel15)
-                            .addComponent(tf_nacimiento_jefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel16)
-                            .addComponent(bt_color_jefe))
-                        .addGap(18, 18, 18)
-                        .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel19)
-                            .addComponent(cb_seccion_jefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(49, 49, 49)
-                        .addComponent(bt_guardar_jefe, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jd_jefesLayout.createSequentialGroup()
-                        .addContainerGap(15, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -580,17 +481,119 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jd_familiares.setTitle("Agregar familiares");
+        jd_jefes.setTitle("Agregar jefe");
 
-        javax.swing.GroupLayout jd_familiaresLayout = new javax.swing.GroupLayout(jd_familiares.getContentPane());
-        jd_familiares.getContentPane().setLayout(jd_familiaresLayout);
-        jd_familiaresLayout.setHorizontalGroup(
-            jd_familiaresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 550, Short.MAX_VALUE)
+        jLabel11.setText("Nombre");
+
+        jLabel12.setText("Edad");
+
+        jLabel13.setText("ID");
+
+        jLabel14.setText("Nacionalidad");
+
+        jLabel15.setText("Lugar de nacimiento");
+
+        jLabel16.setText("Color");
+
+        bt_color_jefe.setText("-");
+        bt_color_jefe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_color_jefeMouseClicked(evt);
+            }
+        });
+
+        bt_guardar_jefe.setText("Guardar jefe");
+        bt_guardar_jefe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_guardar_jefeMouseClicked(evt);
+            }
+        });
+
+        jLabel19.setText("Seccion de trabajo");
+
+        cb_seccion_jefe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Venta de gatos", "Venta de baleadas" }));
+
+        jScrollPane1.setViewportView(jTree1);
+
+        javax.swing.GroupLayout jd_jefesLayout = new javax.swing.GroupLayout(jd_jefes.getContentPane());
+        jd_jefes.getContentPane().setLayout(jd_jefesLayout);
+        jd_jefesLayout.setHorizontalGroup(
+            jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_jefesLayout.createSequentialGroup()
+                .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_jefesLayout.createSequentialGroup()
+                        .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_jefesLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel14)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel11))
+                                .addGap(26, 26, 26))
+                            .addGroup(jd_jefesLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel16)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel19))
+                                .addGap(18, 18, 18)))
+                        .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(tf_nacionalidad_jefe, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(tf_nombre_jefe, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(tf_id_jefe, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(tf_edad_jefe, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(tf_nacimiento_jefe, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                                .addComponent(bt_color_jefe, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cb_seccion_jefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jd_jefesLayout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(bt_guardar_jefe, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
         );
-        jd_familiaresLayout.setVerticalGroup(
-            jd_familiaresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 453, Short.MAX_VALUE)
+        jd_jefesLayout.setVerticalGroup(
+            jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_jefesLayout.createSequentialGroup()
+                .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jd_jefesLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(tf_nombre_jefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(tf_edad_jefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(tf_id_jefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14)
+                            .addComponent(tf_nacionalidad_jefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel15)
+                            .addComponent(tf_nacimiento_jefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel16)
+                            .addComponent(bt_color_jefe))
+                        .addGap(18, 18, 18)
+                        .addGroup(jd_jefesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel19)
+                            .addComponent(cb_seccion_jefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(49, 49, 49)
+                        .addComponent(bt_guardar_jefe, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jd_jefesLayout.createSequentialGroup()
+                        .addContainerGap(15, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         jd_baleadas.setTitle("Agregar baleadas");
@@ -706,6 +709,19 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(58, 58, 58))
         );
 
+        jd_familiares.setTitle("Agregar familiares");
+
+        javax.swing.GroupLayout jd_familiaresLayout = new javax.swing.GroupLayout(jd_familiares.getContentPane());
+        jd_familiares.getContentPane().setLayout(jd_familiaresLayout);
+        jd_familiaresLayout.setHorizontalGroup(
+            jd_familiaresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 550, Short.MAX_VALUE)
+        );
+        jd_familiaresLayout.setVerticalGroup(
+            jd_familiaresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 453, Short.MAX_VALUE)
+        );
+
         jd_eliminar.setTitle("Modificar");
 
         cb_eliminar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Personas (Clientes, Empleados, Jefes)", "Articulos(Baleadas, Gatos)" }));
@@ -760,108 +776,6 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(81, Short.MAX_VALUE))
         );
 
-        jd_cliente_modificar.setTitle("Modificar cliente");
-
-        jLabel35.setText("Nombre");
-
-        jLabel36.setText("Edad");
-
-        jLabel37.setText("ID");
-
-        jLabel38.setText("Nacionalidad");
-
-        jLabel39.setText("Lugar de nacimiento");
-
-        jLabel40.setText("Color");
-
-        bt_mcolor_cliente.setText("-");
-        bt_mcolor_cliente.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_mcolor_clienteMouseClicked(evt);
-            }
-        });
-
-        jLabel41.setText("Dinero");
-
-        bt_guardar_mcliente.setText("Guardar modificaciones");
-        bt_guardar_mcliente.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_guardar_mclienteMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jd_cliente_modificarLayout = new javax.swing.GroupLayout(jd_cliente_modificar.getContentPane());
-        jd_cliente_modificar.getContentPane().setLayout(jd_cliente_modificarLayout);
-        jd_cliente_modificarLayout.setHorizontalGroup(
-            jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_cliente_modificarLayout.createSequentialGroup()
-                .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_cliente_modificarLayout.createSequentialGroup()
-                        .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_cliente_modificarLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel37)
-                                    .addComponent(jLabel38)
-                                    .addComponent(jLabel36)
-                                    .addComponent(jLabel35))
-                                .addGap(26, 26, 26))
-                            .addGroup(jd_cliente_modificarLayout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel40)
-                                    .addComponent(jLabel39)
-                                    .addComponent(jLabel41))
-                                .addGap(18, 18, 18)))
-                        .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tf_nacionalidad_mcliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-                            .addComponent(tf_nombre_mcliente, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(tf_id_mcliente, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(tf_edad_mcliente, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(tf_nacimiento_mcliente, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(bt_mcolor_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tf_dinero_mcliente)))
-                    .addGroup(jd_cliente_modificarLayout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(bt_guardar_mcliente)))
-                .addContainerGap(62, Short.MAX_VALUE))
-        );
-        jd_cliente_modificarLayout.setVerticalGroup(
-            jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_cliente_modificarLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel35)
-                    .addComponent(tf_nombre_mcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel36)
-                    .addComponent(tf_edad_mcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel37)
-                    .addComponent(tf_id_mcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel38)
-                    .addComponent(tf_nacionalidad_mcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel39)
-                    .addComponent(tf_nacimiento_mcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel40)
-                    .addComponent(bt_mcolor_cliente))
-                .addGap(18, 18, 18)
-                .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tf_dinero_mcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel41))
-                .addGap(78, 78, 78)
-                .addComponent(bt_guardar_mcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
-        );
-
         jd_modificar.setTitle("Eliminar");
 
         cb_modificar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Personas (Clientes, Empleados, Jefes)", "Articulos(Baleadas, Gatos)" }));
@@ -914,6 +828,108 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(76, 76, 76)
                 .addComponent(bt_modifcar, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(81, Short.MAX_VALUE))
+        );
+
+        jd_cliente_modificar.setTitle("Modificar cliente");
+
+        jLabel35.setText("Nombre");
+
+        jLabel36.setText("Edad");
+
+        jLabel37.setText("ID");
+
+        jLabel38.setText("Nacionalidad");
+
+        jLabel39.setText("Lugar de nacimiento");
+
+        jLabel40.setText("Color");
+
+        bt_mcolor_cliente.setText("-");
+        bt_mcolor_cliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_mcolor_clienteMouseClicked(evt);
+            }
+        });
+
+        jLabel41.setText("Dinero");
+
+        bt_guardar_mcliente.setText("Modificar cliente");
+        bt_guardar_mcliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_guardar_mclienteMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_cliente_modificarLayout = new javax.swing.GroupLayout(jd_cliente_modificar.getContentPane());
+        jd_cliente_modificar.getContentPane().setLayout(jd_cliente_modificarLayout);
+        jd_cliente_modificarLayout.setHorizontalGroup(
+            jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_cliente_modificarLayout.createSequentialGroup()
+                .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_cliente_modificarLayout.createSequentialGroup()
+                        .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_cliente_modificarLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel37)
+                                    .addComponent(jLabel38)
+                                    .addComponent(jLabel36)
+                                    .addComponent(jLabel35))
+                                .addGap(26, 26, 26))
+                            .addGroup(jd_cliente_modificarLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel40)
+                                    .addComponent(jLabel39)
+                                    .addComponent(jLabel41))
+                                .addGap(18, 18, 18)))
+                        .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tf_nacionalidad_mcliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                            .addComponent(tf_nombre_mcliente, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tf_id_mcliente, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tf_edad_mcliente, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tf_nacimiento_mcliente, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(bt_mcolor_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_dinero_mcliente)))
+                    .addGroup(jd_cliente_modificarLayout.createSequentialGroup()
+                        .addGap(94, 94, 94)
+                        .addComponent(bt_guardar_mcliente)))
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+        jd_cliente_modificarLayout.setVerticalGroup(
+            jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_cliente_modificarLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(tf_nombre_mcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel36)
+                    .addComponent(tf_edad_mcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel37)
+                    .addComponent(tf_id_mcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38)
+                    .addComponent(tf_nacionalidad_mcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel39)
+                    .addComponent(tf_nacimiento_mcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel40)
+                    .addComponent(bt_mcolor_cliente))
+                .addGap(18, 18, 18)
+                .addGroup(jd_cliente_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tf_dinero_mcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel41))
+                .addGap(40, 40, 40)
+                .addComponent(bt_guardar_mcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         jd_empleados_modificar.setTitle("Modificar empleado");
@@ -1057,6 +1073,111 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(bt_guardar_mempleado, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+        );
+
+        jd_jefes_modificar.setTitle("Modificar jefe");
+
+        jLabel55.setText("Nombre");
+
+        jLabel56.setText("Edad");
+
+        jLabel57.setText("ID");
+
+        jLabel58.setText("Nacionalidad");
+
+        jLabel59.setText("Lugar de nacimiento");
+
+        jLabel60.setText("Color");
+
+        bt_color_mjefe.setText("-");
+        bt_color_mjefe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_color_mjefeMouseClicked(evt);
+            }
+        });
+
+        bt_guardar_mjefe.setText("Modificar jefe");
+        bt_guardar_mjefe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_guardar_mjefeMouseClicked(evt);
+            }
+        });
+
+        jLabel61.setText("Seccion de trabajo");
+
+        cb_seccion_mjefe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Venta de gatos", "Venta de baleadas" }));
+
+        javax.swing.GroupLayout jd_jefes_modificarLayout = new javax.swing.GroupLayout(jd_jefes_modificar.getContentPane());
+        jd_jefes_modificar.getContentPane().setLayout(jd_jefes_modificarLayout);
+        jd_jefes_modificarLayout.setHorizontalGroup(
+            jd_jefes_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_jefes_modificarLayout.createSequentialGroup()
+                .addGroup(jd_jefes_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_jefes_modificarLayout.createSequentialGroup()
+                        .addGroup(jd_jefes_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_jefes_modificarLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jd_jefes_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel57)
+                                    .addComponent(jLabel58)
+                                    .addComponent(jLabel56)
+                                    .addComponent(jLabel55))
+                                .addGap(26, 26, 26))
+                            .addGroup(jd_jefes_modificarLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addGroup(jd_jefes_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel60)
+                                    .addComponent(jLabel59)
+                                    .addComponent(jLabel61))
+                                .addGap(18, 18, 18)))
+                        .addGroup(jd_jefes_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_jefes_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(tf_nacionalidad_mjefe, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(tf_nombre_mjefe, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(tf_id_mjefe, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(tf_edad_mjefe, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(tf_nacimiento_mjefe, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                                .addComponent(bt_color_mjefe, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cb_seccion_mjefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jd_jefes_modificarLayout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(bt_guardar_mjefe, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(72, Short.MAX_VALUE))
+        );
+        jd_jefes_modificarLayout.setVerticalGroup(
+            jd_jefes_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_jefes_modificarLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(jd_jefes_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel55)
+                    .addComponent(tf_nombre_mjefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_jefes_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel56)
+                    .addComponent(tf_edad_mjefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_jefes_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel57)
+                    .addComponent(tf_id_mjefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_jefes_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel58)
+                    .addComponent(tf_nacionalidad_mjefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_jefes_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel59)
+                    .addComponent(tf_nacimiento_mjefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_jefes_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel60)
+                    .addComponent(bt_color_mjefe))
+                .addGap(18, 18, 18)
+                .addGroup(jd_jefes_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel61)
+                    .addComponent(cb_seccion_mjefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
+                .addComponent(bt_guardar_mjefe, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1692,7 +1813,11 @@ public class Principal extends javax.swing.JFrame {
                 jd_empleados_modificar.setVisible(true);
             }
             if (personas.get(Integer.parseInt(tf_pos_modifcar.getText())) instanceof Jefes) {
-
+                JOptionPane.showMessageDialog(this, "Se ha detectado que en esa posicion se encuentra un jefe");
+                jd_jefes_modificar.setModal(true);//Bloquear otras ventanas
+                jd_jefes_modificar.pack();//Acoplar el tamaño a la ventana a los elementos que incluye
+                jd_jefes_modificar.setLocationRelativeTo(this);//Ubicar la ventana en una posicion
+                jd_jefes_modificar.setVisible(true);
             }
         }
         jd_modificar.dispose();
@@ -1704,7 +1829,7 @@ public class Principal extends javax.swing.JFrame {
         personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setEdad(Integer.parseInt(tf_edad_mcliente.getText()));
         personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setId(Integer.parseInt(tf_id_mcliente.getText()));
         personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setNacionalidad(tf_nacionalidad_mcliente.getText());
-        personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setLugar_nacimiento(tf_nombre_mcliente.getText());
+        personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setLugar_nacimiento(tf_nacimiento_mcliente.getText());
         personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setColor(bt_mcolor_cliente.getForeground());
         ((Clientes) personas.get(Integer.parseInt(tf_pos_modifcar.getText()))).setDinero(Integer.parseInt(tf_dinero_mcliente.getText()));
         JOptionPane.showMessageDialog(null, "Se modificó el cliente");
@@ -1713,8 +1838,7 @@ public class Principal extends javax.swing.JFrame {
         tf_edad_mcliente.setText("");
         tf_id_mcliente.setText("");
         tf_nacionalidad_mcliente.setText("");
-        tf_nombre_mcliente.setText("");
-        bt_mcolor_cliente.setText("");
+        tf_nacimiento_mcliente.setText("");
         tf_dinero_mcliente.setText("");
     }//GEN-LAST:event_bt_guardar_mclienteMouseClicked
 
@@ -1729,7 +1853,7 @@ public class Principal extends javax.swing.JFrame {
         personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setEdad(Integer.parseInt(tf_edad_mempleado.getText()));
         personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setId(Integer.parseInt(tf_id_mempleado.getText()));
         personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setNacionalidad(tf_nacionalidad_mempleado.getText());
-        personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setLugar_nacimiento(tf_nombre_mempleado.getText());
+        personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setLugar_nacimiento(tf_nacimiento_mempleado.getText());
         personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setColor(bt_color_mempleado.getForeground());
         ((Empleado) personas.get(Integer.parseInt(tf_pos_modifcar.getText()))).setSeccion_trabajo((String) (cb_seccion_mempleado.getSelectedItem()));
         ((Empleado) personas.get(Integer.parseInt(tf_pos_modifcar.getText()))).setHora_entrada((Integer) sp_entrada_mempleado.getValue());
@@ -1742,9 +1866,31 @@ public class Principal extends javax.swing.JFrame {
         tf_edad_mempleado.setText("");
         tf_id_mempleado.setText("");
         tf_nacionalidad_mempleado.setText("");
-        tf_nombre_mempleado.setText("");
+        tf_nacimiento_mempleado.setText("");
         tf_sueldo_mempleado.setText("");
     }//GEN-LAST:event_bt_guardar_mempleadoMouseClicked
+
+    private void bt_color_mjefeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_color_mjefeMouseClicked
+        Color c;
+        c = JColorChooser.showDialog(this, "Seleccione el color", Color.BLACK);
+        bt_color_mjefe.setForeground(c);
+    }//GEN-LAST:event_bt_color_mjefeMouseClicked
+    private void bt_guardar_mjefeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_guardar_mjefeMouseClicked
+        personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setNombre(tf_nombre_mjefe.getText());
+        personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setEdad(Integer.parseInt(tf_edad_mjefe.getText()));
+        personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setId(Integer.parseInt(tf_id_mjefe.getText()));
+        personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setNacionalidad(tf_nacionalidad_mjefe.getText());
+        personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setLugar_nacimiento(tf_nacimiento_mjefe.getText());
+        personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setColor(bt_color_mjefe.getForeground());
+        ((Jefes) personas.get(Integer.parseInt(tf_pos_modifcar.getText()))).setSeccion_trabajo((String) (cb_seccion_mjefe.getSelectedItem()));
+        JOptionPane.showMessageDialog(null, "Se modificó el jefe");
+        jd_jefes_modificar.dispose();
+        tf_nombre_mjefe.setText("");
+        tf_edad_mjefe.setText("");
+        tf_id_mjefe.setText("");
+        tf_nacionalidad_mjefe.setText("");
+        tf_nacimiento_mjefe.setText("");
+    }//GEN-LAST:event_bt_guardar_mjefeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1797,12 +1943,14 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton bt_color_empleado;
     private javax.swing.JButton bt_color_jefe;
     private javax.swing.JButton bt_color_mempleado;
+    private javax.swing.JButton bt_color_mjefe;
     private javax.swing.JButton bt_eliminar;
     private javax.swing.JButton bt_guardar_cliente;
     private javax.swing.JButton bt_guardar_empleado;
     private javax.swing.JButton bt_guardar_jefe;
     private javax.swing.JButton bt_guardar_mcliente;
     private javax.swing.JButton bt_guardar_mempleado;
+    private javax.swing.JButton bt_guardar_mjefe;
     private javax.swing.JButton bt_mcolor_cliente;
     private javax.swing.JButton bt_modifcar;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -1813,6 +1961,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_seccion_empleado;
     private javax.swing.JComboBox<String> cb_seccion_jefe;
     private javax.swing.JComboBox<String> cb_seccion_mempleado;
+    private javax.swing.JComboBox<String> cb_seccion_mjefe;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
@@ -1871,7 +2020,14 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -1912,6 +2068,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog jd_familiares;
     private javax.swing.JDialog jd_gatos;
     private javax.swing.JDialog jd_jefes;
+    private javax.swing.JDialog jd_jefes_modificar;
     private javax.swing.JDialog jd_modificar;
     private javax.swing.JTable jt_listar;
     private javax.swing.JSpinner sp_entrada_empleado;
@@ -1926,27 +2083,32 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_edad_jefe;
     private javax.swing.JTextField tf_edad_mcliente;
     private javax.swing.JTextField tf_edad_mempleado;
+    private javax.swing.JTextField tf_edad_mjefe;
     private javax.swing.JTextField tf_id_cliente;
     private javax.swing.JTextField tf_id_empleado;
     private javax.swing.JTextField tf_id_jefe;
     private javax.swing.JTextField tf_id_mcliente;
     private javax.swing.JTextField tf_id_mempleado;
+    private javax.swing.JTextField tf_id_mjefe;
     private javax.swing.JTextField tf_ingrediente_baleada;
     private javax.swing.JTextField tf_nacimiento_cliente;
     private javax.swing.JTextField tf_nacimiento_empleado;
     private javax.swing.JTextField tf_nacimiento_jefe;
     private javax.swing.JTextField tf_nacimiento_mcliente;
     private javax.swing.JTextField tf_nacimiento_mempleado;
+    private javax.swing.JTextField tf_nacimiento_mjefe;
     private javax.swing.JTextField tf_nacionalidad_cliente;
     private javax.swing.JTextField tf_nacionalidad_empleado;
     private javax.swing.JTextField tf_nacionalidad_jefe;
     private javax.swing.JTextField tf_nacionalidad_mcliente;
     private javax.swing.JTextField tf_nacionalidad_mempleado;
+    private javax.swing.JTextField tf_nacionalidad_mjefe;
     private javax.swing.JTextField tf_nombre_cliente;
     private javax.swing.JTextField tf_nombre_empleado;
     private javax.swing.JTextField tf_nombre_jefe;
     private javax.swing.JTextField tf_nombre_mcliente;
     private javax.swing.JTextField tf_nombre_mempleado;
+    private javax.swing.JTextField tf_nombre_mjefe;
     private javax.swing.JTextField tf_peso_gatos;
     private javax.swing.JTextField tf_pos_eliminar;
     private javax.swing.JTextField tf_pos_modifcar;
