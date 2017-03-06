@@ -199,6 +199,9 @@ public class Principal extends javax.swing.JFrame {
         tf_peso_mgatos = new javax.swing.JTextField();
         tf_altura_mgatos = new javax.swing.JTextField();
         bt_modificar_gatos = new javax.swing.JButton();
+        jd_about = new javax.swing.JDialog();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        ta_about = new javax.swing.JTextArea();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -1294,6 +1297,30 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(58, 58, 58))
         );
 
+        jd_about.setTitle("About");
+
+        ta_about.setColumns(20);
+        ta_about.setRows(5);
+        ta_about.setText("---MENU BAR---\nEste menu contiene varios items que son: Abrir, Guardar, Guardar como, About y Salir.\n\n-> Guardar: Si es la primera vez que se presiona, lo que va a hacer es pedir una ubicacion\npara guardar los datos. Si ya se habia presionado, su funcion es simplemente \nguardar los datos en la direccion que anteriormente selecciono.\n\n-> Guardar como: Su función es seleccionar un nuevo directorio para guardar los datos.\n\n-> About: Es esta ventana. Sirve para ver el funcionamiento de cada componente del\ndel programa.\n\n-> Salir: Lo que hace es terminar la ejecucion del programa.\n\n---Pestaña agregar personas---\nEn esta sección del programa se pueden agregar personas al programa.\nHay 3 tipos de personas: Clientes, Empleados y Jefes.\nPara agregar simplemente presione el boton del tipo de presona que desea agregar y \nllene los campos con informacion y finalmente le da en agregar.\n\n---Pestaña agregar articulos---\nEn esta pestaña se pueden agregar los articulos.\nHay 2 tipos de articulos: Baledas y Gatos.\nAl igual que en la pestaña de agregar personas simplemente se debe de presionar el boton\ndel tipo de articulo que desea agregar y luego llenar los campos con información y luego se da\nclic en agregar.\n\n---Pestaña listar---\nEn esta seccion del programa usted podrá visualizar todos los elemento que ha agregado hasta\nel momento. Se puede seleccionar el tipo que elemento que se desee listar.\n\n---Pestaña modificar/eliminar---\nEn esta pestaña usted podra modificar o eliminar a los elementos creados hasta el momento.\n\n->Para modificar presione el boton que dice modificar; despues tiene que decidir que tipo de\nelemento quiere modificar, seguidamente ingrese la posicion del elemento a modifcar.\nLuego se da clic en el boton \"Ir a modificar\".\nAparecera una ventana que le pedira ingresar los datos nuevos para realizar la modificacion.\n\n->Para eliminar de clic en el boton eliminar y luego seleccione el tipo de dato a eliminar mas la\nposicion del elemento, despues de clic en eliminar\n\n");
+        jScrollPane5.setViewportView(ta_about);
+
+        javax.swing.GroupLayout jd_aboutLayout = new javax.swing.GroupLayout(jd_about.getContentPane());
+        jd_about.getContentPane().setLayout(jd_aboutLayout);
+        jd_aboutLayout.setHorizontalGroup(
+            jd_aboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_aboutLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jd_aboutLayout.setVerticalGroup(
+            jd_aboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_aboutLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
@@ -1580,7 +1607,7 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Modificar/Eliminar", jPanel6);
 
-        jMenu1.setText("File");
+        jMenu1.setText("Menu");
 
         jMenuItem1.setText("Abrir");
         jMenu1.add(jMenuItem1);
@@ -1602,9 +1629,19 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem3);
 
         jMenuItem5.setText("About");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem5);
 
         jMenuItem4.setText("Salir");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem4);
 
         jMenuBar1.add(jMenu1);
@@ -1780,7 +1817,7 @@ public class Principal extends javax.swing.JFrame {
                 }
         ));
         DefaultTableModel modelo = (DefaultTableModel) jt_listar.getModel();
-
+        
         for (int i = 0; i < articulos.size(); i++) {
             if (articulos.get(i) instanceof Baleadas) {
                 Object[] row = {
@@ -2090,6 +2127,18 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        ta_about.setEditable(false);
+        jd_about.setModal(true);//Bloquear otras ventanas
+        jd_about.pack();//Acoplar el tamaño a la ventana a los elementos que incluye
+        jd_about.setLocationRelativeTo(this);//Ubicar la ventana en una posicion
+        jd_about.setVisible(true);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2104,21 +2153,21 @@ public class Principal extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-
+                    
                 }
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(Principal.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            
         } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(Principal.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            
         } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(Principal.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Principal.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -2258,11 +2307,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTree jTree1;
     private javax.swing.JTree jTree2;
     private javax.swing.JTree jTree3;
+    private javax.swing.JDialog jd_about;
     private javax.swing.JDialog jd_baleadas;
     private javax.swing.JDialog jd_baleadas_modificar;
     private javax.swing.JDialog jd_cliente;
@@ -2281,6 +2332,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JSpinner sp_entrada_mempleado;
     private javax.swing.JSpinner sp_salida_empleado;
     private javax.swing.JSpinner sp_salida_mempleado;
+    private javax.swing.JTextArea ta_about;
     private javax.swing.JTextField tf_altura_gatos;
     private javax.swing.JTextField tf_altura_mgatos;
     private javax.swing.JTextField tf_dinero_cliente;

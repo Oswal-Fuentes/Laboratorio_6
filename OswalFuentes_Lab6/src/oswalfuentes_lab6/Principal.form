@@ -1772,11 +1772,55 @@
         </Component>
       </SubComponents>
     </Container>
+    <Container class="javax.swing.JDialog" name="jd_about">
+      <Properties>
+        <Property name="title" type="java.lang.String" value="About"/>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jScrollPane5" pref="749" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jScrollPane5" pref="502" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="ta_about">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="rows" type="int" value="5"/>
+                <Property name="text" type="java.lang.String" value="---MENU BAR---&#xa;Este menu contiene varios items que son: Abrir, Guardar, Guardar como, About y Salir.&#xa;&#xa;-&gt; Guardar: Si es la primera vez que se presiona, lo que va a hacer es pedir una ubicacion&#xa;para guardar los datos. Si ya se habia presionado, su funcion es simplemente &#xa;guardar los datos en la direccion que anteriormente selecciono.&#xa;&#xa;-&gt; Guardar como: Su funci&#xf3;n es seleccionar un nuevo directorio para guardar los datos.&#xa;&#xa;-&gt; About: Es esta ventana. Sirve para ver el funcionamiento de cada componente del&#xa;del programa.&#xa;&#xa;-&gt; Salir: Lo que hace es terminar la ejecucion del programa.&#xa;&#xa;---Pesta&#xf1;a agregar personas---&#xa;En esta secci&#xf3;n del programa se pueden agregar personas al programa.&#xa;Hay 3 tipos de personas: Clientes, Empleados y Jefes.&#xa;Para agregar simplemente presione el boton del tipo de presona que desea agregar y &#xa;llene los campos con informacion y finalmente le da en agregar.&#xa;&#xa;---Pesta&#xf1;a agregar articulos---&#xa;En esta pesta&#xf1;a se pueden agregar los articulos.&#xa;Hay 2 tipos de articulos: Baledas y Gatos.&#xa;Al igual que en la pesta&#xf1;a de agregar personas simplemente se debe de presionar el boton&#xa;del tipo de articulo que desea agregar y luego llenar los campos con informaci&#xf3;n y luego se da&#xa;clic en agregar.&#xa;&#xa;---Pesta&#xf1;a listar---&#xa;En esta seccion del programa usted podr&#xe1; visualizar todos los elemento que ha agregado hasta&#xa;el momento. Se puede seleccionar el tipo que elemento que se desee listar.&#xa;&#xa;---Pesta&#xf1;a modificar/eliminar---&#xa;En esta pesta&#xf1;a usted podra modificar o eliminar a los elementos creados hasta el momento.&#xa;&#xa;-&gt;Para modificar presione el boton que dice modificar; despues tiene que decidir que tipo de&#xa;elemento quiere modificar, seguidamente ingrese la posicion del elemento a modifcar.&#xa;Luego se da clic en el boton &quot;Ir a modificar&quot;.&#xa;Aparecera una ventana que le pedira ingresar los datos nuevos para realizar la modificacion.&#xa;&#xa;-&gt;Para eliminar de clic en el boton eliminar y luego seleccione el tipo de dato a eliminar mas la&#xa;posicion del elemento, despues de clic en eliminar&#xa;&#xa;"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenu1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="File"/>
+            <Property name="text" type="java.lang.String" value="Menu"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
@@ -1804,11 +1848,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="About"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem5ActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Salir"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem4ActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
