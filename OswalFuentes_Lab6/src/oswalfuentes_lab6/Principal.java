@@ -8,9 +8,11 @@ package oswalfuentes_lab6;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import javax.swing.JColorChooser;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -1584,9 +1586,19 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setText("Guardar");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
         jMenuItem3.setText("Guardar como");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem3);
 
         jMenuItem5.setText("About");
@@ -1636,6 +1648,13 @@ public class Principal extends javax.swing.JFrame {
         tf_nacionalidad_cliente.setText("");
         tf_nacimiento_cliente.setText("");
         tf_nombre_cliente.setText("");
+        String ruta = dir.getAbsolutePath();
+        File archivo = new File(ruta + "\\prueba.txt");
+        archivo.getParentFile().mkdirs();
+        Administacion_de_Archivos ap = new Administacion_de_Archivos(ruta);
+        Clientes c = new Clientes(ticket, dinero, edad, id, nacionalidad, lugar_nacimiento, nombre, color);
+        ap.setPersona(c);
+        ap.escribirArchivo_Clientes();
     }//GEN-LAST:event_bt_guardar_clienteMouseClicked
 
     private void bt_colorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_colorMouseClicked
@@ -1761,7 +1780,7 @@ public class Principal extends javax.swing.JFrame {
                 }
         ));
         DefaultTableModel modelo = (DefaultTableModel) jt_listar.getModel();
-        
+
         for (int i = 0; i < articulos.size(); i++) {
             if (articulos.get(i) instanceof Baleadas) {
                 Object[] row = {
@@ -1934,11 +1953,11 @@ public class Principal extends javax.swing.JFrame {
         }
         if (cb_modificar.getSelectedItem().equals("Articulos(Baleadas, Gatos)")) {
             if (articulos.get(Integer.parseInt(tf_pos_modifcar.getText())) instanceof Baleadas) {
-             JOptionPane.showMessageDialog(this, "Se ha detectado que en esa posicion se encuentra una baleada");
+                JOptionPane.showMessageDialog(this, "Se ha detectado que en esa posicion se encuentra una baleada");
                 jd_baleadas_modificar.setModal(true);//Bloquear otras ventanas
                 jd_baleadas_modificar.pack();//Acoplar el tamaño a la ventana a los elementos que incluye
                 jd_baleadas_modificar.setLocationRelativeTo(this);//Ubicar la ventana en una posicion
-                jd_baleadas_modificar.setVisible(true);   
+                jd_baleadas_modificar.setVisible(true);
             }
             if (articulos.get(Integer.parseInt(tf_pos_modifcar.getText())) instanceof Gatos) {
                 JOptionPane.showMessageDialog(this, "Se ha detectado que en esa posicion se encuentra un gato");
@@ -2038,6 +2057,39 @@ public class Principal extends javax.swing.JFrame {
         tf_precio_mbaleada.setText("");
     }//GEN-LAST:event_bt_agregar_baleada1MouseClicked
 
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        int seleccion = fileChooser.showSaveDialog(this);
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            File dir = fileChooser.getSelectedFile();
+            boolean fueCreado = dir.mkdir();
+            if (fueCreado) {
+                JOptionPane.showMessageDialog(this, "Directorio creado exitosamente");
+            } else {
+                JOptionPane.showMessageDialog(this, "El directorio no fue creado");
+            }
+        }
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        if (guardar == 0) {
+            guardar++;
+            JFileChooser fileChooser = new JFileChooser();
+            int seleccion = fileChooser.showSaveDialog(this);
+            if (seleccion == JFileChooser.APPROVE_OPTION) {
+                dir = fileChooser.getSelectedFile();
+                boolean fueCreado = dir.mkdir();
+                if (fueCreado) {
+                    JOptionPane.showMessageDialog(this, "Directorio creado exitosamente");
+                } else {
+                    JOptionPane.showMessageDialog(this, "El directorio no fue creado");
+                }
+            }
+        } else {
+            //asdasd
+        }
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2052,21 +2104,21 @@ public class Principal extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                    
+
                 }
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(Principal.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            
+
         } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(Principal.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            
+
         } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(Principal.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Principal.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -2279,22 +2331,30 @@ public class Principal extends javax.swing.JFrame {
     ArrayList<Persona> personas = new ArrayList();
     ArrayList<Articulos_en_Venta> articulos = new ArrayList();
     ArrayList<String> ingredientes = new ArrayList();
-    int pos;
+    int pos, guardar = 0;
+    File dir;
     /*
-     personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setNombre(tf_nombre_mcliente.getText());
-        personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setEdad(Integer.parseInt(tf_edad_mcliente.getText()));
-        personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setId(Integer.parseInt(tf_id_mcliente.getText()));
-        personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setNacionalidad(tf_nacionalidad_mcliente.getText());
-        personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setLugar_nacimiento(tf_nacimiento_mcliente.getText());
-        personas.get(Integer.parseInt(tf_pos_modifcar.getText())).setColor(bt_mcolor_cliente.getForeground());
-        ((Clientes) personas.get(Integer.parseInt(tf_pos_modifcar.getText()))).setDinero(Integer.parseInt(tf_dinero_mcliente.getText()));
-        JOptionPane.showMessageDialog(null, "Se modificó el cliente");
-        jd_cliente_modificar.dispose();
-        tf_nombre_mcliente.setText("");
-        tf_edad_mcliente.setText("");
-        tf_id_mcliente.setText("");
-        tf_nacionalidad_mcliente.setText("");
-        tf_nacimiento_mcliente.setText("");
-        tf_dinero_mcliente.setText("");
+    administrarPersonas ap = new administrarPersonas("./personas.txt");
+        Persona p = new Persona(1, "Juan Perez", 20);
+        Persona q = new Persona(2, "Maria Barrios", 21);
+        Persona k = new Persona(3, "Pedro Pablo", 51);
+        ap.setPersona(p);
+        ap.setPersona(q);
+        ap.setPersona(k);
+        ap.escribirArchivo();
+        ap.cargarArchivo();
+        System.out.println(ap);
+        
+        //modificar una persona
+        ap.cargarArchivo();
+        ap.getListaPersonas().get(1).setNombre("Perla");
+        ap.escribirArchivo();
+
+        //eliminar persona
+        ap.cargarArchivo();
+        ap.getListaPersonas().remove(2);
+        ap.escribirArchivo();
+        //1 
+         
      */
 }
